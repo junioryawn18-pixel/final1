@@ -4,97 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CampusLife - Map</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container nav-wrap">
-      <div class="logo">★ CampusLife</div>
+      <div class="logo">⭐ CampusLife</div>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
         <a href="dining.html">Dining</a>
-        <a class="active" href="map.html">Map</a>
+        <a href="map.html" class="active">Map</a>
       </nav>
       <button class="alert-btn">Alerts</button>
     </div>
   </header>
 
-  <section class="hero hero-map short-hero">
-    <div class="container">
-      <p class="eyebrow">Campus Map</p>
-      <h1>Navigate Campus</h1>
-      <p class="hero-text">
-        Find buildings, dining halls, parking, and points of interest across campus.
-      </p>
-    </div>
-  </section>
+  <main class="container">
+    <section class="hero-section">
+      <h1>Campus Map</h1>
+      <p class="section-subtext">Navigate your way around campus with our interactive map.</p>
+    </section>
 
-  <main class="container section">
-    <div class="map-layout">
-      <aside class="sidebar">
-        <input type="text" placeholder="Search locations..." />
-
-        <h3>Filter by Type</h3>
-        <div class="tag-row">
-          <span class="mini-tag dark-tag">All</span>
-          <span class="mini-tag">Academic</span>
-          <span class="mini-tag">Dining</span>
-          <span class="mini-tag">Sports</span>
-          <span class="mini-tag">Parking</span>
-          <span class="mini-tag">Social</span>
-        </div>
-
-        <h3 class="space-top-small">Locations</h3>
-        <div class="location-list">
-          <div class="location-item">📚 Main Library <span>Academic</span></div>
-          <div class="location-item">☕ Student Union <span>Social</span></div>
-          <div class="location-item">🏢 Science Building <span>Academic</span></div>
-          <div class="location-item">🚗 Parking Lot A <span>Parking</span></div>
-          <div class="location-item">🧭 Athletic Center <span>Sports</span></div>
-        </div>
-
-        <div class="direction-box">
-          <h3>Get Directions</h3>
-          <p>GPS/Directions API integration</p>
-          <button class="btn btn-dark full-btn">Open in Maps</button>
-        </div>
-      </aside>
-
-      <section class="map-panel">
-        <img src="campus-map.jpg" alt="Campus Map" style="width:100%; height:400px; object-fit:cover; border-radius:18px;">
+    <section class="content-section">
+      <div class="map-container">
         <div class="map-controls">
-          <span>Showing 5 locations</span>
-          <div>
-            <button>Zoom In</button>
-            <button>Zoom Out</button>
-            <button onclick="showLocation()">My Location</button>
-          </div>
+          <button onclick="zoomIn()" class="btn btn-primary">Zoom In</button>
+          <button onclick="zoomOut()" class="btn btn-secondary">Zoom Out</button>
+          <button onclick="showMyLocation()" class="btn btn-success">My Location</button>
         </div>
+        <div id="mapArea" class="map-image">
+          <img src="images/campus-map.jpg" alt="Campus Map" style="width:100%; max-width:800px;">
+        </div>
+      </div>
 
-        <div class="quick-grid">
-          <a href="dining.html" class="quick-card">Dining Halls</a>
-          <a href="events.html" class="quick-card">Events Today</a>
-          <a href="map.html" class="quick-card">Parking</a>
-          <a href="map.html" class="quick-card">Academic</a>
-        </div>
-      </section>
-    </div>
+      <div class="search-section">
+        <h3>Find Locations</h3>
+        <input type="text" id="locationSearch" placeholder="Search for library, union, science..." class="form-control">
+        <button onclick="searchLocation()" class="btn btn-primary mt-2">Search</button>
+        <div id="locationResult" class="result-box mt-2"></div>
+      </div>
+
+      <div class="info-section">
+        <h3>Map Information</h3>
+        <div id="mapInfo" class="info-box"></div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <div class="logo small-logo">★ CampusLife</div>
+  <footer>
+    <div class="container">
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
         <a href="dining.html">Dining</a>
         <a href="map.html">Map</a>
       </div>
-      <p>© 2026 Yaw CampusLife Super App</p>
+      <p>© 2026 CampusLife Super App</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
