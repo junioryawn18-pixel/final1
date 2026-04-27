@@ -20,3 +20,9 @@ GitHub Pages (for live hosting)
 #Setup instructions
 git clone -https://github.com/junioryawn18-pixel/final1.git
  Deployment link:https://final1-eta-orcin.vercel.app/
+ 🚀 Future Improvements & Stretch Goals
+-User Authentication: Allow students to create accounts, log in, and save their favorite events or dining locations.
+-Push Notifications: Add browser notifications to alert students about upcoming RSVP'd events or limited-time dining specials.
+-Personalization: Introduce a dashboard where users can set dietary preferences (e.g., vegan, gluten-free) to automatically filter dining options.
+
+
